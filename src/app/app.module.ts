@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,14 @@ import { DatabindComponent } from './databind/databind.component';
 import { PropertybindComponent } from './propertybind/propertybind.component';
 import { ClassStyleComponent } from './class-style/class-style.component';
 import { EventbindComponent } from './eventbind/eventbind.component';
+import { TwoWayComponent } from './two-way/two-way.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectComponent } from './project/project.component';
+import { LoginComponent } from './login/login.component';
+import { SigmupComponent } from './sigmup/sigmup.component';
+import { HomeComponent } from './home/home.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,11 +33,18 @@ import { EventbindComponent } from './eventbind/eventbind.component';
     DatabindComponent,
     PropertybindComponent,
     ClassStyleComponent,
-    EventbindComponent
+    EventbindComponent,
+    TwoWayComponent,
+    ProjectComponent,
+    LoginComponent,
+    SigmupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

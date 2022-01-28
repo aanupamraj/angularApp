@@ -1,0 +1,32 @@
+<div class="page-area">
+  <div class="row justify-content-center py-16">
+    <div class="col-md-6 bg-white rounded shadow py-6">
+      <form (ngSubmit)="onSubmit(signForm)" #signForm="ngForm" name="form">
+        <h2>Sign Up form</h2>
+        <div class="form-group">
+          <label for="username">User Name *</label>
+          <input type="username" class="form-control" id="username" name="username" placeholder="Enter username"
+            [(ngModel)]="signUp.username" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="signUp.email" required #email="ngModel"
+            [ngClass]="{ 'is-invalid': email.invalid && email.touched}" email />
+          <div *ngIf="email.invalid && email.touched" class="invalid-feedback">
+            {{email.errors}}
+            <div *ngIf="email.valid">Email is required</div>
+            <button (click)="abc(email)">Click</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="enter password"
+            [(ngModel)]="signUp.password" required>
+        </div><br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!signForm.valid">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
